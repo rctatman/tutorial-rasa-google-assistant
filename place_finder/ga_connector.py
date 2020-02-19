@@ -8,8 +8,6 @@ from rasa.core.channels.channel import UserMessage, OutputChannel
 from rasa.core.channels.channel import InputChannel
 from rasa.core.channels.channel import CollectingOutputChannel
 
-
-
 logger = logging.getLogger(__name__)
 
 
