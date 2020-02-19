@@ -53,7 +53,6 @@
 - I am looking for a [bank](query) withing 25 meters from here.
 - Looking for a [cinema](query).
 
-
 ## intent: opening_hours
 - Is it still open?
 - Is it open at the moment?
@@ -64,9 +63,6 @@
 - Tell me if it's open.
 - Is the place open today?
 - Is the place still open today?
-
-
- 
 
 ## intent: address
 - Where is it?
@@ -93,7 +89,7 @@
 - I want to know the rating 
 
 
-## itent: inform
+## intent: inform
 - 10 meters 
 - 100 meters
 - 1500
@@ -101,6 +97,3 @@
 - let's say 50 meters
 - within 15 meters
 - within 25 meters from here
-
-
-
