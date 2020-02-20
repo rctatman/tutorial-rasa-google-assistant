@@ -1,61 +1,40 @@
-slots:
- query:
-   type: text
- number:
-   type: text
- rating:
-   type: unfeaturized
- address:
-   type: unfeaturized
- opening_hours:
-   type: unfeaturized
- location_match:
-   type: categorical
-   values:
-   - none
-   - one
-
-
 intents:
- - greet
- - thanks
- - goodbye
- - place_search
- - opening_hours
- - address
- - rating
- - inform
- 
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
 
-entities:
- - query
- - number
+actions:
+- utter_greet
+- utter_cheer_up
+- utter_did_that_help
+- utter_happy
+- utter_goodbye
+- utter_iamabot
 
 responses:
   utter_greet:
-    - text: "Hello! I am a places search assistant. I can help you find places wherever you are, provide information about the location like opening hours, rating, address. So what are you looking for?"
-  utter_goodbye:
-    - text: "Talk to you later!"
-  utter_thanks:
-    - text: "You are very welcome."
-  utter_what_radius:
-    - text: "Within what radius?"
-  utter_rating:
-    - text: "The rating is {rating}"
-  utter_address:
-    - text: "The address is {address}."
-  utter_opening_hours:
-    - text: "The place is {opening_hours}"
-  utter_no_results:
-    - text: "Sorry, I couldn't find anything."
+  - text: "Hey! How are you?"
+    buttons:
+    - title: "great"
+      payload: "/mood_great"
+    - title: "super sad"
+      payload: "/mood_unhappy"
 
-actions:
-  - utter_greet
-  - utter_goodbye
-  - utter_thanks
-  - utter_what_radius
-  - utter_rating
-  - utter_opening_hours
-  - utter_address
-  - utter_no_results
-  - action_place_search
+  utter_cheer_up:
+  - text: "Here's a fun fact to cheer you up: sea otters hold hands sleeping so they don't float away from each other"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
