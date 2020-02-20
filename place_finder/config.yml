@@ -1,22 +1,12 @@
 language: en
-pipeline:
-- name: "SpacyNLP"
-- name: "SpacyTokenizer"
-- name: "SpacyFeaturizer"
-- name: "CRFEntityExtractor"
-- name: "SklearnIntentClassifier"
-- name: DucklingHTTPExtractor
-  url: "http://localhost:8000"
-  # dimensions to extract
-  dimensions: ["number"]
+pipeline: supervised_embeddings
 policies:
-- batch_size: 50
+- name: EmbeddingPolicy
+  max_history: 5
+  batch_size: 50
   epochs: 200
   max_training_samples: 300
-  name: KerasPolicy
-- fallback_action_name: action_default_fallback
-  name: FallbackPolicy
-- max_history: 5
-  name: MemoizationPolicy
+- name: FallbackPolicy
+- name: MemoizationPolicy
 - name: FormPolicy
 - name: MappingPolicy
