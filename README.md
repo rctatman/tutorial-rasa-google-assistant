@@ -5,7 +5,7 @@ This repository contains the code of the tutorial of connecting Rasa-powered ass
 ## What's in this repository?
 
 This repository consists of the following files and directories:  
-- **place_finder** - a directory which contains a pre-built Rasa assistant called Place Finder. This assistant is used in this tutorial to demonstrate the integration to Google Assistant.
+- **mood_bot_text** - a directory which contains a pre-built Rasa assistant called Moodbot Text, based on the [Moodbot](https://github.com/RasaHQ/rasa/tree/master/examples/moodbot) example. This assistant is used in this tutorial to demonstrate the integration to Google Assistant.
 - **action.json** - a custom Google Assistant action configuration file.
 - **ga_connector.py** - a custom Rasa-Google Assistant connector. If you follow the tutorial using your own assistant, add this connector to your project directory.
 
