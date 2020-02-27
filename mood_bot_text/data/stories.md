@@ -9,7 +9,6 @@
   - utter_greet             <!-- action of the bot to execute -->
 * mood_unhappy
   - utter_cheer_up
-  - utter_did_that_help
 * affirm
   - utter_happy
 
@@ -18,10 +17,13 @@
   - utter_greet
 * mood_unhappy
   - utter_cheer_up
-  - utter_did_that_help
 * deny
-  - utter_goodbye
+  - utter_goodbye_console
 
 ## say goodbye
 * goodbye
   - utter_goodbye
+
+## bot challenge
+* bot_challenge
+  - utter_iamabot

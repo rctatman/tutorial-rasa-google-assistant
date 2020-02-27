@@ -37,26 +37,30 @@ class AlexaConnector(InputChannel):
         # required route: defines
         @alexa_webhook.route("/webhook", methods=["POST"])
         async def receive(request):
+            # get the json request sent by Alexa
             payload = request.json
+            # check to see if the user is trying to launch the skill
             intenttype = payload["request"]["type"]
 
             # if the user is starting the skill, let them know it worked & what to do next
             if intenttype == "LaunchRequest":
-                message = "Hello! Welcome to the Rasa-powered Alexa skill. You can start by saying 'hi'."
+                message = "Hello! Welcome to this Rasa-powered Alexa skill. You can start by saying 'hi'."
                 session = "false"
             else:
                 # get the Alexa-detected intent
                 intent = payload["request"]["intent"]["name"]
-                # get the user-provided text from the slot named "text"
-                text = payload["request"]["intent"]["slots"]["text"]["value"]
-
+        
                 # makes sure the user isn't trying to end the skill
                 if intent == "AMAZON.StopIntent":
                     session = "true"
                     message = "Talk to you later"
                 else:
+                    # get the user-provided text from the slot named "text"
+                    text = payload["request"]["intent"]["slots"]["text"]["value"]
+
                     # initialize output channel
                     out = CollectingOutputChannel()
+                    
                     # send the user message to Rasa & wait for the
                     # response to be sent back
                     await on_new_message(UserMessage(text, out))

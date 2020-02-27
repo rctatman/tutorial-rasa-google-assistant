@@ -19,11 +19,9 @@
 - good by
 - cee you later
 - good night
-- bye
 - goodbye
 - have a nice day
 - see you around
-- bye bye
 - see you later
 
 ## intent:affirm
@@ -71,6 +69,8 @@
 - extremly sad
 - so saad
 - so sad
+- a little down
+- grumpy
 
 ## intent:bot_challenge
 - are you a bot?
